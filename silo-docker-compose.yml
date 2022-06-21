@@ -1,0 +1,55 @@
+version: '3.5'
+
+services:
+  drone-server:
+    image: drone/drone
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - drone
+    volumes:
+      - ./drone-data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - ./drone.env
+    restart: always
+    environment:
+      - DRONE_GITHUB_SKIP_VERIFY=true
+      - DRONE_AGENTS_ENABLED=true
+      - DRONE_SERVER_PROTO=http
+      - DRONE_TLS_AUTOCERT=false
+      - DRONE_OPEN=false
+      - DRONE_GITHUB=true
+      - DRONE_NETRC_CLONE_ONLY=true
+      # Variables below set via drone.env file
+      # - DRONE_SERVER_HOST=
+      # - DRONE_USER_CREATE=
+      # - DRONE_USER_FILTER=
+      # - DRONE_GITHUB_CLIENT_ID=
+      # - DRONE_GITHUB_CLIENT_SECRET=
+      # - DRONE_RPC_SECRET=
+
+  drone-agent:
+    image: drone/drone-runner-docker
+    restart: always
+    depends_on:
+      - drone-server
+    networks:
+      - drone
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - ./drone.env
+    environment:
+      - DRONE_RPC_SERVER=drone-server:80
+      - DRONE_RPC_PROTO=https
+      - DRONE_RUNNER_CAPACITY=2
+      - DRONE_RUNNER_NAME=drone-ci-demo-gitops-runner
+      # Variables below set via drone.env file
+      # - DRONE_RPC_SECRET=
+      # - DRONE_RPC_HOST==
+
+networks:
+  drone:
+    name: drone_network
