@@ -1,3 +1,3 @@
 *.bkup
 *.env
-drone-data
+drone-data/

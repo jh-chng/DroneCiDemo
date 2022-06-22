@@ -1,4 +1,4 @@
 FROM nginx:mainline-alpine
 RUN rm /etc/nginx/conf.d/*
-ADD hello.conf /etc/nginx/conf.d/
-ADD index.html /usr/share/nginx/html/
+ADD nginx-hello/hello.conf /etc/nginx/conf.d/
+ADD nginx-hello/index.html /usr/share/nginx/html/
