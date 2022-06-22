@@ -1,3 +1,4 @@
 *.bkup
 *.env
 drone-data/
+registry-data/
