@@ -22,6 +22,7 @@ services:
       - DRONE_OPEN=false
       - DRONE_GITHUB=true
       - DRONE_NETRC_CLONE_ONLY=true
+      - DRONE_LOGS_DEBUG=true
       # Variables below set via drone.env file
       # - DRONE_SERVER_HOST=
       # - DRONE_USER_CREATE=
@@ -43,25 +44,24 @@ services:
       - ./drone.env
     environment:
       - DRONE_RPC_SERVER=drone-server:80
-      - DRONE_RPC_PROTO=https
+      - DRONE_RPC_PROTO=http
       - DRONE_RUNNER_CAPACITY=2
       - DRONE_RUNNER_NAME=drone-ci-demo-gitops-runner
       # Variables below set via drone.env file
       # - DRONE_RPC_SECRET=
       # - DRONE_RPC_HOST==
 
-  registry:
-    image: registry:2
-    networks:
-      - drone
-    ports:
-    - "5000:5000"
-    environment:
-      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
-    volumes:
-      - ./registry-data:/data
+      # registry:
+      #   image: registry:2
+      #   networks:
+      #     - drone
+      #   ports:
+      #   - "5000:5000"
+      #   environment:
+      #     REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+      #   volumes:
+      #     - ./registry-data:/data
 
 networks:
   drone:
     name: drone_network
-
