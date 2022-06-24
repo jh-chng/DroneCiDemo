@@ -1,5 +1,7 @@
 # DroneCiDemo
 
+![Alt text](RMF%20cluster%20architecture.png)
+
 docker-compose -f drone-docker-compose.yml up -d
 
 https://github.com/localtunnel/localtunnel
@@ -9,3 +11,9 @@ Dependency:
     Use the PPA method
   lt --port 80 --subdomain heartbeatbedokbuildfarm --print-requests
 
+## CD
+
+```
+curl -LO https://get.helm.sh/helm-v3.4.0-linux-amd64.tar.gz
+
+```
