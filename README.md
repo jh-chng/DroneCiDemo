@@ -26,5 +26,3 @@ curl http://localhost:5000/v2/_catalog
 curl -LO https://get.helm.sh/helm-v3.4.0-linux-amd64.tar.gz
 
 ```
-
-hello
