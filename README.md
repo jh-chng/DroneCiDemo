@@ -21,6 +21,7 @@ curl http://localhost:5000/v2/_catalog
 
 docker run -P -p 8081:80 nginxdemos/hello
 
+https://ce5e-103-252-200-229.ap.ngrok.io/hook
 
 ## CD
 
@@ -28,4 +29,3 @@ docker run -P -p 8081:80 nginxdemos/hello
 curl -LO https://get.helm.sh/helm-v3.4.0-linux-amd64.tar.gz
 
 ```
-DummyPush
