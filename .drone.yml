@@ -15,7 +15,7 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     settings:
-      repo: localhost:5000/nginxhello
+      repo: localhost:5000/testout-nginxhello
       registry: localhost:5000
       dockerfile: nginx-hello/Dockerfile
 
