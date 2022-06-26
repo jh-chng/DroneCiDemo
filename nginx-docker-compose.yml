@@ -1,0 +1,7 @@
+version: '3.5'
+
+services:
+  nginxhello:
+    image: 10.0.2.3:5000/nginxhello
+    ports:
+      - 8081:80

@@ -19,6 +19,8 @@ curl -s YOURIPADDRESS:PORT | grep title.*title
 
 curl http://localhost:5000/v2/_catalog
 
+docker run -P -p 8081:80 nginxdemos/hello
+
 
 ## CD
 
@@ -26,4 +28,3 @@ curl http://localhost:5000/v2/_catalog
 curl -LO https://get.helm.sh/helm-v3.4.0-linux-amd64.tar.gz
 
 ```
-dummypush8
