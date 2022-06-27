@@ -2,6 +2,6 @@ version: '3.5'
 
 services:
   nginxhello:
-    image: localhost:5000/testout-nginxhello
+    image: localhost:5000/nginxhello
     ports:
       - 8081:80
