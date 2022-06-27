@@ -15,12 +15,13 @@ Make a code change to an app, then deploy it
 ## Tutorial flow: 
 
 1. Showcase - code change to deployment 
-2. Wireguard setup connect everyone - Ping!
-3. Create github acc 
-4. Git branch proj  
-5. Push new dockerfile registry 
-6. Deploy docker container! 
-7. Marvel at your new app 
+2. Architecture - What's going on????
+3. Wireguard setup connect everyone - Ping!
+4. Create github acc 
+5. Git branch proj  
+6. Push new dockerfile registry 
+7. Deploy docker container! 
+8. Marvel at your new app 
 
 ## Drone CI
 This repo uses Drone.io for CI. Useful tutorial by a guy from youtube:
@@ -62,8 +63,13 @@ DRONE_SERVER_PROXY_HOST
 drone.yml -->
 
 ## Make your changes here!
-1. .drone.yml -> line 18 -> Change the "localhost.../nginxhello" to "localhost.../YOURNAME-nginxhello" 
-2. nginx-hello/index.html -> Line 5 -> Change "Hello World" to "YOURNAME Hello World"
+1. .drone.yml 
+    1. line 18
+    2. Change the "localhost.../nginxhello" to "localhost.../YOURNAME-nginxhello" 
+2. nginx-hello/index.html
+    1. Line 5
+    2. Change "Hello World" to "YOURNAME Hello World"
+    
 <!-- Commands
 ngrok http 80
 
