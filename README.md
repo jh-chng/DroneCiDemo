@@ -80,11 +80,11 @@ git checkout -b YOURNAME
 Save your code changes in Git
 ```
 git commit -am 'New push!'
-git push # Use your github PAT here
+git push --set-upstream origin demo/YOURNAME # Use your github PAT here
 ```
 ## Deploy docker container! 
 ```
-docker run -P -p 8081:80 YOURNAME-nginxhello
+docker run -P -p 8081:80 10.0.2.3:5000/YOURNAME-nginxhello
 ```
 ## Marvel at your new app 
 Opem your web browser and type in
@@ -96,6 +96,8 @@ You should see the title of the webpage change to YOURNAME Hello World
 ![Alt text](nginx-helloworld.png)
 
 <!-- Commands
+curl http://localhost:5000/v2/_catalog
+
 ngrok http 80
 
 
